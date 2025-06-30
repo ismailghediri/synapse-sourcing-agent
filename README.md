@@ -54,6 +54,9 @@ python main.py
 ```
 You can change job_url variable in main.py with the job description you want.
 
+OR through the hugging face space(FastAPI Swagger UI)
+https://ismailghediri-synapse-recruiter-api.hf.space/docs
+
 ## ⚙️ How It Works
 Pipeline Architecture
 
