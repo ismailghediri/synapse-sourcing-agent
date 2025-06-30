@@ -27,7 +27,7 @@ It's an automated pipeline that:
 
 # 1. Clone repo
 ```bash
-git clone https://github.com/ismailghediri/synapse-ai-sourcing-agent.git
+git clone https://github.com/ismailghediri/synapse-sourcing-agent.git
 cd synapse-ai-sourcing-agent
 ```
 # 2. Setup environment (auto-installs ChromeDriver)
@@ -42,18 +42,10 @@ venv\Scripts\activate    # Windows
 pip install -r requirements.txt
 ```
 
-# 4. Configure API keys
-```bash
-cp .env.example .env
-```
-
- API Configuration
+ ## API Configuration
  
-Edit .env with your keys(or contact me via ismail.ghediri55@gmail.com to provide you with the keys I'm using):
+The .env file is made public for limitation when sharing the API link hosted on Hugging Face
 
-# .env
-SERPER_API_KEY="your_serper_key_here"
-GEMINI_API_KEY="your_gemini_key_here"
 
 ## 🛠️ Usage
 Run directly:
