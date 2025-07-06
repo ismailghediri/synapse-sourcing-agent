@@ -47,14 +47,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY . .
 
-# 2. Install Python dependencies
+COPY requirements-api.txt .
 RUN pip install --no-cache-dir -r requirements-api.txt
 
-# 3. Set environment variables
+COPY . .
+
 ENV PYTHONPATH=/app
 ENV CHROME_PATH=/usr/bin/google-chrome-stable
 
-EXPOSE 7860
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+EXPOSE 8000  
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]  

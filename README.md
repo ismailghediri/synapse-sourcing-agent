@@ -1,3 +1,14 @@
+---
+title: Synapse AI Sourcing Agent
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_file: app.py
+app_port: 8000
+pinned: false
+---
+
 # Synapse Recruitment Automation
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
@@ -27,36 +38,42 @@ It's an automated pipeline that:
 
 # 1. Clone repo
 ```bash
-git clone https://github.com/ismailghediri/synapse-ai-sourcing-agent.git
+git clone https://github.com/ismailghediri/synapse-sourcing-agent.git
 cd synapse-ai-sourcing-agent
 ```
-# 2. Setup environment (auto-installs ChromeDriver)
+
+# 2. Install dependencies
 ```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate    # Windows
+pip install -r requirements-api.txt
 ```
 
-# 3. Install dependencies
+# 3. Configure API Keys (Optional for Local Use)
+Create a .env file in the root directory with your own API keys:
 ```bash
-pip install -r requirements.txt
+SERPER_API_KEY=your_serper_api_key
+GEMINI_API_KEY=your_gemini_api_key
 ```
+Note: .env is ignored in .gitignore to prevent exposure. Not required if using the Space.
 
-# 4. Configure API keys
+# 4. Run Locally
 ```bash
-cp .env.example .env
+uvicorn app:app --reload
 ```
+Access the FastAPI UI at http://127.0.0.1:8000/docs to test endpoints. Without keys, test mode activates.
 
- API Configuration
- 
-Edit .env with your keys(or contact me via ismail.ghediri55@gmail.com to provide you with the keys I'm using):
+# 5. Run with Docker:
+```bash
+docker build -t synapse-agent .
+docker run -p 8000:8000 synapse-agent
+```
+Add your .env file to the container if using local keys.
 
-# .env
-SERPER_API_KEY="your_serper_key_here"
-GEMINI_API_KEY="your_gemini_key_here"
 
 ## 🛠️ Usage
-Run directly:
+Hosted on Hugging Face Spaces with an Interactive UI: https://ismailghediri-synapse-recruiter-api.hf.space/docs
+Uses Space Secrets for SERPER_API_KEY and GEMINI_API_KEY, enabling full functionality without local configuration.
+
+Or run directly:
 ```bash
 python main.py
 ```
