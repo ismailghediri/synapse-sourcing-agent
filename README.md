@@ -61,6 +61,7 @@ Add your .env file to the container if using local keys.
 
 ## 🛠️ Usage
 Hosted on Hugging Face Spaces with an Interactive UI: https://ismailghediri-synapse-recruiter-api.hf.space/docs
+
 Uses Space Secrets for SERPER_API_KEY and GEMINI_API_KEY, enabling full functionality without local configuration.
 
 Or run directly:
