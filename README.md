@@ -1,13 +1,3 @@
----
-title: Synapse AI Sourcing Agent
-emoji: 🤖
-colorFrom: blue
-colorTo: purple
-sdk: docker
-app_file: app.py
-app_port: 8000
-pinned: false
----
 
 # Synapse Recruitment Automation
 
